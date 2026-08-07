@@ -20,6 +20,8 @@
       "@components/*": ["./src/components/*"],
       "@lib/*": ["./src/lib/*"],
       "@providers/*": ["./src/providers/*"],
+      "@i18n/*": ["./i18n/*"],
+      "@messages/*": ["./messages/*"],
     }
   },
   "include": [
