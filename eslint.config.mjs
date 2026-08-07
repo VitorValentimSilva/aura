@@ -29,6 +29,7 @@ export default defineConfig([
     "**/.next/**",
     "**/out/**",
     "**/src/generated/**",
+    "**/components/ui/**",
   ]),
   {
     files: ["**/*.{js,mjs,cjs}"],
