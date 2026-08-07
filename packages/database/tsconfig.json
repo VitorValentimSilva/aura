@@ -6,7 +6,11 @@
     "target": "ES2023",
     "outDir": "./dist",
     "declaration": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["node"]
   },
   "include": ["src/**/*.ts", "prisma.config.ts"],
   "exclude": ["dist", "node_modules"]
