@@ -5,6 +5,13 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "dist/**"]
     },
+    "generate": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false,
+      "interactive": true
+    },
     "dev": {
       "cache": false,
       "persistent": true
