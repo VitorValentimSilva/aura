@@ -1,0 +1,10 @@
+node_modules
+.turbo
+coverage
+dist
+build
+.next
+out
+pnpm-lock.yaml
+**/pnpm-lock.yaml
+**/src/generated/**
