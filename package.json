@@ -7,6 +7,12 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
+    "db:push:development": "turbo run db:push:development",
+    "db:push:production": "turbo run db:push:production",
+    "db:migrate:development": "turbo run db:migrate:development",
+    "db:migrate:production": "turbo run db:migrate:production",
+    "generate:development": "turbo run generate:development",
+    "generate:production": "turbo run generate:production",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",

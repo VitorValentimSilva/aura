@@ -1,16 +1,31 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "dist/**"]
     },
-    "generate": {
+    "generate:development": {
       "cache": false
     },
-    "db:push": {
+    "generate:production": {
+      "cache": false
+    },
+    "db:push:development": {
       "cache": false,
       "interactive": true
+    },
+    "db:push:production": {
+      "cache": false,
+      "interactive": true
+    },
+    "db:migrate:development": {
+      "cache": false,
+      "interactive": true
+    },
+    "db:migrate:production": {
+      "cache": false
     },
     "dev": {
       "cache": false,
