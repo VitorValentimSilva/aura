@@ -34,8 +34,9 @@ export function ThemeToggle() {
       aria-label={t("ariaLabel")}
       pressed={isDark}
       onPressedChange={toggleTheme}
-      size="sm"
-      className="hover:bg-accent/80 focus-visible:ring-ring relative size-7 cursor-pointer overflow-hidden rounded-full transition-colors focus-visible:ring-2"
+      size="default"
+      variant="outline"
+      className="cursor-pointer"
       title={isDark ? t("switchToLight") : t("switchToDark")}
     >
       <AnimatePresence mode="popLayout" initial={false}>
