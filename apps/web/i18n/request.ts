@@ -15,5 +15,16 @@ export default getRequestConfig(async ({ locale }) => {
     }
   }
 
-  return { locale, messages: (await import(`@messages/${locale}.json`)).default };
+  const [common, landing] = await Promise.all([
+    import(`@messages/${locale}/common.json`),
+    import(`@messages/${locale}/landing.json`),
+  ]);
+
+  return {
+    locale,
+    messages: {
+      common: common.default,
+      landing: landing.default,
+    },
+  };
 });
