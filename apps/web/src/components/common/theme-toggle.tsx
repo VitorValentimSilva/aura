@@ -35,7 +35,7 @@ export function ThemeToggle() {
       pressed={isDark}
       onPressedChange={toggleTheme}
       size="sm"
-      className="hover:bg-accent/80 focus-visible:ring-ring relative size-7 overflow-hidden rounded-full transition-colors focus-visible:ring-2"
+      className="hover:bg-accent/80 focus-visible:ring-ring relative size-7 cursor-pointer overflow-hidden rounded-full transition-colors focus-visible:ring-2"
       title={isDark ? t("switchToLight") : t("switchToDark")}
     >
       <AnimatePresence mode="popLayout" initial={false}>
