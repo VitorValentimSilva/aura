@@ -1,22 +1,20 @@
-"use client";
-
 import { Switch as SwitchPrimitive } from "@base-ui/react/switch";
-import { LucideIcon } from "lucide-react";
+import { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
 function Switch({
   className,
   size = "default",
-  icon: Icon,
-  checkedIcon: CheckedIcon,
+  icon,
+  checkedIcon,
   ...props
 }: SwitchPrimitive.Root.Props & {
   size?: "sm" | "default";
-  icon?: LucideIcon;
-  checkedIcon?: LucideIcon;
+  icon?: ReactNode;
+  checkedIcon?: ReactNode;
 }) {
-  const hasIcons = Boolean(Icon || CheckedIcon);
+  const hasIcons = Boolean(icon || checkedIcon);
 
   return (
     <SwitchPrimitive.Root
@@ -35,11 +33,11 @@ function Switch({
         {hasIcons && (
           <>
             <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-data-checked/switch:scale-0 group-data-checked/switch:-rotate-90 group-data-checked/switch:opacity-0 [&_svg]:size-2.5">
-              {Icon && <Icon />}
+              {icon}
             </span>
 
             <span className="absolute inset-0 flex scale-0 rotate-90 items-center justify-center opacity-0 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-data-checked/switch:scale-100 group-data-checked/switch:rotate-0 group-data-checked/switch:opacity-100 [&_svg]:size-2.5">
-              {CheckedIcon && <CheckedIcon />}
+              {checkedIcon}
             </span>
           </>
         )}
