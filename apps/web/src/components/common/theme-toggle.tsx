@@ -53,7 +53,7 @@ export function ThemeToggle() {
             }}
             className="flex items-center justify-center text-indigo-400"
           >
-            <Moon className="size-4 fill-indigo-400/20" />
+            <Moon className="size-5 fill-indigo-400/20" />
           </motion.div>
         ) : (
           <motion.div
@@ -68,7 +68,7 @@ export function ThemeToggle() {
             }}
             className="flex items-center justify-center text-amber-500"
           >
-            <Sun className="size-4 fill-amber-500/20" />
+            <Sun className="size-5 fill-amber-500/20" />
           </motion.div>
         )}
       </AnimatePresence>

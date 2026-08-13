@@ -16,7 +16,7 @@ function SheetTrigger({ ...props }: SheetPrimitive.Trigger.Props) {
 }
 
 function SheetClose({ ...props }: SheetPrimitive.Close.Props) {
-  return <SheetPrimitive.Close data-slot="sheet-close" {...props} />;
+  return <SheetPrimitive.Close data-slot="sheet-close" nativeButton={false} {...props} />;
 }
 
 function SheetPortal({ ...props }: SheetPrimitive.Portal.Props) {
@@ -62,9 +62,11 @@ function SheetContent({
         {showCloseButton && (
           <SheetPrimitive.Close
             data-slot="sheet-close"
-            render={<Button variant="ghost" className="absolute top-3 right-3" size="icon-sm" />}
+            render={
+              <Button variant="ghost" size="sm" className="absolute top-5 right-3 cursor-pointer" />
+            }
           >
-            <XIcon />
+            <XIcon className="size-6" />
             <span className="sr-only">Close</span>
           </SheetPrimitive.Close>
         )}
