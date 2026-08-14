@@ -8,5 +8,8 @@
     "enter": "Entrar",
     "startFree": "Começar grátis",
     "openMenu": "Abrir menu"
+  },
+  "language": {
+    "changeLanguage": "Alterar idioma"
   }
 }

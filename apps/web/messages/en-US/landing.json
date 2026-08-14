@@ -1,1 +1,8 @@
-{}
+{
+  "header": {
+    "nav": {
+      "home": "Home",
+      "module": "Modules"
+    }
+  }
+}
