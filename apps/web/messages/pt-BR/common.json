@@ -1,7 +1,12 @@
 {
-  "themeToggle": {
-    "ariaLabel": "Alternar tema",
+  "theme": {
+    "changeTheme": "Alternar tema",
     "switchToLight": "Mudar para o tema claro",
     "switchToDark": "Mudar para o tema escuro"
+  },
+  "button": {
+    "enter": "Entrar",
+    "startFree": "Começar grátis",
+    "openMenu": "Abrir menu"
   }
 }

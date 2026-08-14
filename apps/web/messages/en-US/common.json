@@ -1,7 +1,12 @@
 {
-  "themeToggle": {
-    "ariaLabel": "Change theme",
+  "theme": {
+    "changeTheme": "Change theme",
     "switchToLight": "Switch to light theme",
     "switchToDark": "Switch to dark theme"
+  },
+  "button": {
+    "enter": "Enter",
+    "startFree": "Start free",
+    "openMenu": "Open menu"
   }
 }
