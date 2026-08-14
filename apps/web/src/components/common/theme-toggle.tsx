@@ -10,15 +10,14 @@ import { useSyncExternalStore } from "react";
 const emptySubscribe = () => () => {};
 
 export function ThemeToggle() {
-  const { resolvedTheme, setTheme } = useTheme();
-
   const t = useTranslations("common.theme");
-
   const mounted = useSyncExternalStore(
     emptySubscribe,
     () => true,
     () => false,
   );
+
+  const { resolvedTheme, setTheme } = useTheme();
 
   if (!mounted) {
     return <div className="size-9" aria-hidden="true" />;
@@ -29,6 +28,7 @@ export function ThemeToggle() {
   const toggleTheme = () => {
     setTheme(isDark ? "light" : "dark");
   };
+
   return (
     <Toggle
       aria-label={t("changeTheme")}
@@ -36,7 +36,7 @@ export function ThemeToggle() {
       onPressedChange={toggleTheme}
       size="default"
       variant="outline"
-      className="cursor-pointer"
+      className="cursor-pointer rounded-full"
       title={isDark ? t("switchToLight") : t("switchToDark")}
     >
       <AnimatePresence mode="popLayout" initial={false}>
