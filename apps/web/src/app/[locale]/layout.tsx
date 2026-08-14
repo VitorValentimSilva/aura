@@ -9,6 +9,8 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { ReactNode } from "react";
 
+import { ConsoleNoiseFilter } from "@/components/common/console-noise-filter";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -52,6 +54,8 @@ export default async function Layout({ children, params }: LayoutProps) {
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full font-sans antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
+        <ConsoleNoiseFilter />
+
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"
