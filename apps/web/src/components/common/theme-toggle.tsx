@@ -12,7 +12,7 @@ const emptySubscribe = () => () => {};
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
 
-  const t = useTranslations("common.themeToggle");
+  const t = useTranslations("common.theme");
 
   const mounted = useSyncExternalStore(
     emptySubscribe,
@@ -31,7 +31,7 @@ export function ThemeToggle() {
   };
   return (
     <Toggle
-      aria-label={t("ariaLabel")}
+      aria-label={t("changeTheme")}
       pressed={isDark}
       onPressedChange={toggleTheme}
       size="default"
