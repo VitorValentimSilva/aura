@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      sentry:
+        patterns:
+          - "@sentry/*"
+      upstash:
+        patterns:
+          - "@upstash/*"
+      nestjs:
+        patterns:
+          - "@nestjs/*"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
