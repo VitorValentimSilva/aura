@@ -1,3 +1,6 @@
+export const DEFAULT_TRACES_SAMPLE_RATE = 0.2;
+export const DEFAULT_PROFILES_SAMPLE_RATE = 0;
+
 export function resolveSampleRate(value: string | undefined, fallback: number): number {
   if (value === undefined) {
     return fallback;
