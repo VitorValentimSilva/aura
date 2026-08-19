@@ -1,5 +1,6 @@
 import { PrismaNeon } from "@prisma/adapter-neon";
-import { PrismaClient } from "@/generated/index.js";
+
+import { PrismaClient } from "./generated/index.js";
 
 function readDatabaseUrl() {
   const databaseUrl = process.env.DATABASE_URL;

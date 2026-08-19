@@ -1,1 +1,1 @@
-export { db, createDatabaseClient } from "@/client.js";
+export { createDatabaseClient, db } from "./client.js";
