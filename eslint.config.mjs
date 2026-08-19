@@ -66,6 +66,28 @@ export default defineConfig([
     rules: sharedTsRules,
   },
   {
+    files: ["packages/**/*.{ts,mts,cts}"],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommendedTypeChecked,
+      eslintPluginPrettierRecommended,
+    ],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+      sourceType: "module",
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    plugins: {
+      "simple-import-sort": simpleImportSort,
+    },
+    rules: sharedTsRules,
+  },
+  {
     files: ["apps/web/**/*.{ts,tsx,mts,cts}"],
     extends: [...nextVitals, ...nextTs, eslintPluginPrettierRecommended],
     languageOptions: {

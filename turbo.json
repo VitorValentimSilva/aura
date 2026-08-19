@@ -4,7 +4,8 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "dist/**"]
+      "env": ["DATABASE_URL"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "generate:development": {
       "cache": false
@@ -32,7 +33,11 @@
       "persistent": true
     },
     "lint": {},
-    "test": {},
-    "typecheck": {}
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"]
+    }
   }
 }
