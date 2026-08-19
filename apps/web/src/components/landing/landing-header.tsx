@@ -23,6 +23,8 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { id: "home", labelKey: "home", href: "#" },
   { id: "module", labelKey: "module", href: "#modulos" },
+  { id: "ia", labelKey: "ia", href: "#ia" },
+  { id: "pricing", labelKey: "pricing", href: "#precos" },
 ] as const;
 
 export function LandingHeader() {
