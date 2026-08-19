@@ -1,0 +1,39 @@
+FROM node:24-alpine AS base
+RUN corepack enable
+
+FROM base AS pruner
+WORKDIR /app
+RUN apk add --no-cache libc6-compat
+COPY . .
+RUN pnpm dlx turbo prune aura-web --docker
+
+FROM base AS installer
+WORKDIR /app
+COPY --from=pruner /app/out/json/ .
+RUN pnpm install --frozen-lockfile
+
+FROM base AS builder
+WORKDIR /app
+COPY --from=installer /app/ .
+COPY --from=pruner /app/out/full/ .
+COPY tsconfig.base.json ./tsconfig.base.json
+ARG NEXT_PUBLIC_API_URL
+ARG NEXT_PUBLIC_SENTRY_DSN
+ARG SENTRY_AUTH_TOKEN
+ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+ENV NEXT_PUBLIC_SENTRY_DSN=${NEXT_PUBLIC_SENTRY_DSN}
+ENV SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN}
+ENV CI=true
+RUN pnpm exec turbo run build --filter=aura-web...
+
+FROM base AS runner
+WORKDIR /app
+ENV NODE_ENV=production
+ARG GIT_SHA=unknown
+ENV SENTRY_RELEASE=${GIT_SHA}
+RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
+COPY --from=builder /app .
+USER nextjs
+WORKDIR /app/apps/web
+EXPOSE 3000
+CMD ["pnpm", "start"]

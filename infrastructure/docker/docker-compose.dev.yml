@@ -1,0 +1,27 @@
+services:
+  redis:
+    image: redis:8-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - aura-redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  serverless-redis-http:
+    image: hiett/serverless-redis-http:latest
+    depends_on:
+      redis:
+        condition: service_healthy
+    ports:
+      - "8079:80"
+    environment:
+      SRH_MODE: env
+      SRH_TOKEN: example_token
+      SRH_CONNECTION_STRING: "redis://redis:6379"
+
+volumes:
+  aura-redis-data:
