@@ -6,10 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint .",
+    "test": "echo \"no tests yet\" && exit 0",
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
+    "@sentry/nextjs": "catalog:",
+    "aura-cache": "workspace:*",
+    "aura-config": "workspace:*",
+    "aura-observability": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.31.0",
@@ -28,6 +34,5 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "tailwindcss": "^4.3.3"
-  },
-  "packageManager": "pnpm@11.17.0"
+  }
 }
