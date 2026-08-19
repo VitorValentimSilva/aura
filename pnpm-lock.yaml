@@ -303,9 +303,15 @@ importers:
       aura-config:
         specifier: workspace:*
         version: link:../../packages/config
+      aura-constants:
+        specifier: workspace:*
+        version: link:../../packages/constants
       aura-database:
         specifier: workspace:*
         version: link:../../packages/database
+      aura-nest-kit:
+        specifier: workspace:*
+        version: link:../../packages/nest-kit
       aura-observability:
         specifier: workspace:*
         version: link:../../packages/observability
@@ -376,6 +382,9 @@ importers:
       aura-config:
         specifier: workspace:*
         version: link:../../packages/config
+      aura-constants:
+        specifier: workspace:*
+        version: link:../../packages/constants
       aura-observability:
         specifier: workspace:*
         version: link:../../packages/observability
@@ -455,9 +464,15 @@ importers:
       aura-config:
         specifier: workspace:*
         version: link:../../packages/config
+      aura-constants:
+        specifier: workspace:*
+        version: link:../../packages/constants
       aura-database:
         specifier: workspace:*
         version: link:../../packages/database
+      aura-nest-kit:
+        specifier: workspace:*
+        version: link:../../packages/nest-kit
       aura-observability:
         specifier: workspace:*
         version: link:../../packages/observability
@@ -553,6 +568,9 @@ importers:
 
   packages/config:
     dependencies:
+      aura-constants:
+        specifier: workspace:*
+        version: link:../constants
       zod:
         specifier: 'catalog:'
         version: 4.4.3
@@ -609,6 +627,37 @@ importers:
 
   packages/domain:
     devDependencies:
+      '@types/node':
+        specifier: 'catalog:'
+        version: 26.2.0
+      tsup:
+        specifier: 'catalog:'
+        version: 8.5.1(@swc/core@1.15.47)(jiti@2.7.0)(postcss@8.5.26)(supports-color@8.1.1)(typescript@5.9.3)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+
+  packages/nest-kit:
+    dependencies:
+      '@nestjs/common':
+        specifier: ^11.1.29
+        version: 11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1)
+      '@nestjs/terminus':
+        specifier: ^11.1.1
+        version: 11.1.1(@nestjs/common@11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@11.1.29)(@prisma/client@7.9.1(prisma@7.9.1(@types/react-dom@19.2.4(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(typescript@5.9.3))(typescript@5.9.3))(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@sentry/nestjs':
+        specifier: 'catalog:'
+        version: 10.70.0(@nestjs/common@11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@11.1.29)(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(supports-color@8.1.1)
+      aura-cache:
+        specifier: workspace:*
+        version: link:../cache
+      aura-database:
+        specifier: workspace:*
+        version: link:../database
+    devDependencies:
+      '@nestjs/core':
+        specifier: ^11.1.29
+        version: 11.1.29(@nestjs/common@11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/platform-express@11.1.29)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@types/node':
         specifier: 'catalog:'
         version: 26.2.0
