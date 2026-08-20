@@ -1,3 +1,4 @@
+import { clerkMiddleware } from "@clerk/nextjs/server";
 import { routing } from "@i18n/routing";
 import { identifierFromRequest, pageLimiter } from "@lib/rate-limit";
 import { NextRequest, NextResponse } from "next/server";
@@ -5,7 +6,7 @@ import createMiddleware from "next-intl/middleware";
 
 const intlMiddleware = createMiddleware(routing);
 
-export default async function proxy(request: NextRequest) {
+export default clerkMiddleware(async (_auth, request: NextRequest) => {
   const decision = await pageLimiter.limit(identifierFromRequest(request));
 
   if (!decision.success) {
@@ -18,7 +19,7 @@ export default async function proxy(request: NextRequest) {
   }
 
   return intlMiddleware(request);
-}
+});
 
 export const config = {
   matcher: ["/((?!api|monitoring|_next|_vercel|.*\\..*).*)"],
