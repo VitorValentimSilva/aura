@@ -8,7 +8,9 @@ import { apiEnv } from "aura-config/api";
 import { AppModule } from "@/app.module";
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, { rawBody: true });
+
+  app.enableCors({ origin: apiEnv.CORS_ALLOWED_ORIGINS, credentials: true });
 
   app.set("trust proxy", 1);
 
