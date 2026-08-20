@@ -2,6 +2,7 @@ import { Controller, Get } from "@nestjs/common";
 import { HealthCheck, HealthCheckService, PrismaHealthIndicator } from "@nestjs/terminus";
 import { CacheHealthIndicator, PrismaService } from "aura-nest-kit";
 
+import { Public } from "@/common/decorators/public.decorator";
 import { SkipRateLimit } from "@/common/decorators/skip-rate-limit.decorator";
 
 @Controller("health")
@@ -14,12 +15,14 @@ export class HealthController {
   ) {}
 
   @Get("live")
+  @Public()
   @SkipRateLimit()
   live(): { status: "ok" } {
     return { status: "ok" };
   }
 
   @Get("ready")
+  @Public()
   @SkipRateLimit()
   @HealthCheck()
   ready() {
