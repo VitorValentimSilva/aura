@@ -8,6 +8,7 @@ const clientEnvSchema = z.object({
   NEXT_PUBLIC_SENTRY_DSN: optionalUrl(),
   NEXT_PUBLIC_SENTRY_ENVIRONMENT: optionalString(),
   NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE: optionalString(),
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1),
 });
 
 export const clientEnv = createEnv(clientEnvSchema);
