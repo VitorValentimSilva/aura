@@ -1,0 +1,18 @@
+# Pacotes compartilhados — propósito e fronteiras
+
+| Pacote               | Propósito                                                                                                                                            | O que NÃO entra                                                  |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `aura-types`         | Tipos TS puros (`Result`, `Paginated`), zero runtime                                                                                                 | Regras de negócio, validação em runtime                          |
+| `aura-constants`     | Enums/constantes literais (ex: `SERVICE_NAMES`)                                                                                                      | Valores que dependem de env                                      |
+| `aura-validation`    | Schemas zod compartilhados                                                                                                                           | Tipos que não precisam de validação em runtime                   |
+| `aura-utils`         | Helpers puros, sem dependência de framework                                                                                                          | Nada que dependa de env, SDK ou regra de negócio                 |
+| `aura-config`        | Env validada por app, só via subpaths (`/api`, `/worker`, `/web`, `/client`, `/server`) — nunca pelo caminho raiz, pra não vazar segredo pro browser | Política de decisão (isso é `aura-observability`)                |
+| `aura-observability` | Sampling, scrubbing, release/environment do Sentry — sem depender de nenhum SDK do Sentry                                                            | `Sentry.init()` em si (isso é de cada app)                       |
+| `aura-cache`         | Cache-aside e rate-limit sobre Upstash Redis, fail-open, driver em memória pra dev/teste                                                             | Fila de jobs (ver ADR 002)                                       |
+| `aura-database`      | Único ponto de acesso ao Postgres via Prisma + Neon                                                                                                  | Regra de negócio                                                 |
+| `aura-domain`        | Entidades/regras de negócio agnósticas de framework/ORM                                                                                              | Prisma, Express, NestJS, qualquer SDK de infra                   |
+| `aura-sdk`           | Cliente TS tipado da API, roda em edge/browser                                                                                                       | Nenhum SDK do Sentry (trace headers são injetados pelo chamador) |
+| `aura-ai`            | Interfaces de integração de IA, sem provedor concreto ainda                                                                                          | SDK de nenhum provedor (OpenAI, Anthropic, etc.)                 |
+| `aura-ui`            | Vazio de propósito — componentes locais de `apps/web` migram pra cá só com um 2º consumidor                                                          | —                                                                |
+
+Grafo de dependências (sem ciclos): `types`/`constants` → `validation`/`utils` → `config` → `observability`/`cache` → `domain` → `sdk`/`ai` → apps.

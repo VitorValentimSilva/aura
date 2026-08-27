@@ -1,0 +1,51 @@
+name: Deploy Notify — API
+
+# This workflow does NOT deploy apps/api — Railway (or whichever PaaS was
+# chosen, see infrastructure/railway/README.md) deploys it automatically via
+# its own GitHub integration once connected. This workflow only tells Sentry
+# about the new release and uploads its sourcemaps, so errors after this
+# point show up attributed to the right release/commit in the aura-api
+# project.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/api/**"
+      - "packages/**"
+      - "pnpm-lock.yaml"
+
+env:
+  DATABASE_URL: "postgresql://dummy:dummy@localhost:5432/dummy"
+
+jobs:
+  sentry-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm --filter aura-api... run build
+
+      - name: Create Sentry release and upload sourcemaps
+        uses: getsentry/action-release@v3
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: aura
+          SENTRY_PROJECT: aura-api
+        with:
+          environment: production
+          release: ${{ github.sha }}
+          sourcemaps: apps/api/dist

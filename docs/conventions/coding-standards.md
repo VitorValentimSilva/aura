@@ -1,0 +1,7 @@
+# Convenções de código
+
+- **Lint/format**: ESLint flat config (`eslint.config.mjs`) + Prettier, `eslint-plugin-simple-import-sort` ordena imports automaticamente (`pnpm run lint:fix` corrige). Regras type-aware (`typescript-eslint/recommendedTypeChecked`) em `apps/api`, `apps/worker` e `packages/*` — não em `apps/web` (usa a config do `eslint-config-next`).
+- **Imports relativos dentro de pacotes** (`packages/*`): sempre com extensão `.js` (`"./client.js"`, não `"./client"`) — são pacotes ESM (`"type": "module"`), o `nodenext` do TS exige isso. Dentro de `apps/api`/`apps/worker` (CommonJS) é o oposto: sem extensão, seguindo o padrão já usado (`"./app.controller"`).
+- **Alias `@/*`**: só existe dentro de `apps/api` (aponta pra `src/`) e nos aliases de `apps/web` (`@app`, `@components`, `@lib`, `@providers`, `@i18n`, `@messages`). `apps/worker` usa import relativo em tudo — não introduza `@/*` lá sem atualizar esse padrão em todo o app.
+- **Pacotes novos em `packages/`**: siga o template de `docs/architecture/adr/003-package-build-strategy.md` — build dual ESM/CJS via tsup, sem dependência não usada (não declare `zod`/`aura-constants`/etc. num `package.json` se nada no `src/` importa de fato).
+- **Módulos NestJS globais** (`@Global()`): reserve pra infraestrutura transversal (cache, banco, config, observabilidade) — módulos de feature em `apps/api/src/modules`/`apps/worker/src/modules` não devem ser globais.

@@ -2,7 +2,244 @@
   "header": {
     "nav": {
       "home": "Início",
-      "module": "Modulos"
+      "module": "Modulos",
+      "ia": "IA",
+      "pricing": "Preços"
     }
+  },
+  "hero": {
+    "badge": "ERP com inteligência artificial",
+    "titleLine1": "O sistema que cuida do seu negócio",
+    "titleHighlight": "enquanto você cuida",
+    "titleLine2": "dos seus clientes.",
+    "description": "Aura reúne CRM, vendas, financeiro, estoque e serviços num único lugar — e usa IA para avisar, sugerir e resolver antes de você precisar perguntar.",
+    "ctaPrimary": "Começar agora",
+    "ctaSecondary": "Ver como funciona",
+    "noCreditCard": "Sem cartão de crédito",
+    "quickSetup": "Configuração em 10 minutos",
+    "localSupport": "Suporte em português",
+    "socialProof": "+500 empresas confiam na Aura",
+    "insightPanel": {
+      "title": "Resumo de hoje",
+      "revenue": "Receita",
+      "dueSoon": "A vencer"
+    }
+  },
+  "segments": {
+    "heading": "Feito para quem toca o negócio no dia a dia",
+    "items": {
+      "restaurants": "Restaurantes",
+      "workshops": "Oficinas",
+      "clinics": "Clínicas",
+      "distributors": "Distribuidoras",
+      "smallBusinesses": "Pequenos comércios",
+      "serviceProviders": "Prestadores de serviço",
+      "serviceCompanies": "Empresas de serviços"
+    }
+  },
+  "orbitPods": {
+    "inactiveClients": {
+      "label": "3 clientes inativos",
+      "sub": "CRM · detectado agora"
+    },
+    "cashToday": {
+      "label": "Caixa hoje +R$ 3.240",
+      "sub": "Financeiro · tempo real"
+    },
+    "criticalStock": {
+      "label": "Estoque crítico: 2 itens",
+      "sub": "Estoque · previsão IA"
+    }
+  },
+  "modules": {
+    "badge": "Tudo num só lugar",
+    "title": "Seis módulos. Uma única inteligência.",
+    "description": "Nada de sistemas separados que não conversam entre si. Cada módulo alimenta a IA da Aura — e ela devolve isso em decisões prontas para você tomar.",
+    "crm": {
+      "title": "CRM",
+      "description": "Clientes, leads, funil de vendas e histórico completo de relacionamento.",
+      "highlight": "IA detecta clientes inativos"
+    },
+    "sales": {
+      "title": "Vendas",
+      "description": "Orçamentos, pedidos, contratos e assinaturas fechados em poucos cliques.",
+      "highlight": "Cobranças automáticas por IA"
+    },
+    "finance": {
+      "title": "Financeiro",
+      "description": "Contas a pagar e receber, fluxo de caixa, PIX e conciliação automática — o coração do seu negócio, sempre visível.",
+      "highlight": "Resumo financeiro diário por IA"
+    },
+    "inventory": {
+      "title": "Estoque",
+      "description": "Produtos, compras, fornecedores e inventário sempre atualizados.",
+      "highlight": "Previsão de estoque por IA"
+    },
+    "services": {
+      "title": "Serviços",
+      "description": "Ordens de serviço, agenda da equipe e status em tempo real.",
+      "highlight": "Agenda otimizada por IA"
+    },
+    "documents": {
+      "title": "Documentos",
+      "description": "Contratos, certificados e vencimentos organizados — a Aura avisa antes do prazo.",
+      "highlight": "IA avisa antes do vencimento"
+    }
+  },
+  "ai": {
+    "badge": "IA conversacional",
+    "title": "Pergunte. A Aura responde.",
+    "description": "Converse com a Aura como conversaria com alguém da equipe — peça resumos, tire dúvidas e deixe ela agir antes mesmo de você perceber que algo precisa de atenção.",
+    "capabilities": {
+      "chat": "Chat em linguagem natural",
+      "dailySummary": "Resumos diários",
+      "purchaseSuggestions": "Sugestões de compra",
+      "stockForecast": "Previsão de estoque",
+      "autoBilling": "Cobranças automáticas",
+      "inactiveDetection": "Detecção de clientes inativos",
+      "indicatorExplanation": "Explicação de indicadores em linguagem simples"
+    },
+    "chat": {
+      "assistantName": "Aura IA",
+      "question": "Quais clientes estão sem comprar há mais de 30 dias?",
+      "answer": "3 clientes: Oficina Silva, Padaria Bella e Studio Fit. Quer que eu envie uma mensagem de reengajamento pra eles?",
+      "answerMeta": "CRM · respondido em 2s"
+    }
+  },
+  "dashboard": {
+    "badge": "Dashboard inteligente",
+    "title": "Todos os números, uma tela só.",
+    "description": "Receita, lucro, contas vencidas e estoque crítico — sempre atualizados, com os insights da IA já destacados.",
+    "windowLabel": "painel.aura.app",
+    "chartLabel": "Receita — últimas 12 semanas",
+    "insightsLabel": "Insights da IA",
+    "insightsFootnote": "Atualizado automaticamente, todos os dias",
+    "kpis": {
+      "revenue": { "value": "R$ 42.180", "label": "Receita" },
+      "profit": { "value": "R$ 15.960", "label": "Lucro" },
+      "overdue": { "value": "4", "label": "Contas vencidas" },
+      "criticalStock": { "value": "6", "label": "Itens em estoque crítico" }
+    },
+    "insights": {
+      "billing": "Enviar cobrança para 3 clientes em atraso",
+      "restock": "Repor estoque de 2 produtos antes que acabem",
+      "followUp": "Fazer follow-up com clientes inativos há 30+ dias"
+    }
+  },
+  "integrations": {
+    "badge": "Conectado",
+    "title": "Funciona com as ferramentas que você já usa.",
+    "description": "A Aura conversa com o que o seu negócio já usa — sem precisar mudar como você vende ou recebe.",
+    "whatsapp": "WhatsApp",
+    "email": "E-mail",
+    "banks": "Bancos",
+    "pix": "PIX",
+    "nfe": "NF-e",
+    "shopify": "Shopify",
+    "mercadoLivre": "Mercado Livre",
+    "shopee": "Shopee"
+  },
+  "pricing": {
+    "badge": "Preços simples",
+    "title": "Um plano que cresce com o seu negócio.",
+    "description": "Comece pequeno e escale conforme o seu negócio cresce — todo plano já vem com IA no centro.",
+    "placeholderNote": "Preços de exemplo — valores finais em breve.",
+    "popularBadge": "Mais popular",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "tagline": "Pra quem está começando sozinho.",
+        "price": "R$ --",
+        "period": "/mês",
+        "features": ["1 usuário", "Até 2 módulos", "Suporte por e-mail", "Insights básicos de IA"],
+        "cta": "Começar agora"
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Pra equipes em crescimento que precisam de tudo.",
+        "price": "R$ --",
+        "period": "/mês",
+        "features": [
+          "Até 5 usuários",
+          "Todos os módulos inclusos",
+          "Suporte prioritário",
+          "IA conversacional completa"
+        ],
+        "cta": "Testar grátis"
+      },
+      "business": {
+        "name": "Business",
+        "tagline": "Pra negócios com mais de uma unidade.",
+        "price": "R$ --",
+        "period": "/mês",
+        "features": [
+          "Até 20 usuários",
+          "Multi-loja / multi-tenant",
+          "Suporte dedicado",
+          "Automações de IA personalizadas"
+        ],
+        "cta": "Falar com vendas"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "tagline": "Pra operações grandes com necessidades sob medida.",
+        "price": "Sob consulta",
+        "period": "",
+        "features": [
+          "Usuários ilimitados",
+          "Acesso à API aberta",
+          "SLA e gerente de sucesso dedicado",
+          "Integrações personalizadas"
+        ],
+        "cta": "Falar com vendas"
+      }
+    }
+  },
+  "faq": {
+    "badge": "Perguntas frequentes",
+    "title": "Tirou sua dúvida?",
+    "description": "Ainda não tem certeza? Veja o que empresas costumam perguntar antes de migrar pra Aura.",
+    "items": [
+      {
+        "question": "Meus dados estão seguros?",
+        "answer": "Sim. A Aura usa armazenamento criptografado, isolamento por cliente (multi-tenant) e backups regulares, mantendo os dados do seu negócio privados e protegidos."
+      },
+      {
+        "question": "Consigo migrar meus dados atuais?",
+        "answer": "Sim — nossa equipe ajuda a importar clientes, produtos e histórico financeiro de planilhas ou do seu sistema atual durante a implantação."
+      },
+      {
+        "question": "Que tipo de suporte eu tenho?",
+        "answer": "Todo plano inclui suporte em português. Planos superiores têm atendimento prioritário e canais dedicados."
+      },
+      {
+        "question": "Posso cancelar quando quiser?",
+        "answer": "Sim, não há contrato de fidelidade. Você pode cancelar quando quiser, sem multa."
+      },
+      {
+        "question": "A Aura funciona pro meu tipo de negócio?",
+        "answer": "A Aura foi feita para prestadores de serviço, pequenos comércios, distribuidoras, oficinas, restaurantes e clínicas — se você gerencia clientes, vendas e estoque, ela se encaixa."
+      },
+      {
+        "question": "Ela integra com as ferramentas que eu já uso?",
+        "answer": "Sim — WhatsApp, e-mail, bancos, PIX, NF-e e marketplaces como Shopify, Mercado Livre e Shopee já são suportados."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Pronto pra deixar a Aura cuidar do trabalho manual?",
+    "description": "Junte-se a centenas de empresas que já economizam horas toda semana com a Aura.",
+    "button": "Começar gratuitamente"
+  },
+  "footer": {
+    "tagline": "O ERP com inteligência artificial que cuida do seu negócio enquanto você cuida dos seus clientes.",
+    "links": {
+      "home": "Início",
+      "modules": "Módulos",
+      "ai": "IA",
+      "pricing": "Preços",
+      "faq": "Perguntas"
+    },
+    "copyright": "© {year} Aura. Todos os direitos reservados."
   }
 }
