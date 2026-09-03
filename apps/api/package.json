@@ -22,10 +22,10 @@
   },
   "dependencies": {
     "@clerk/backend": "^3.16.9",
-    "@nestjs/common": "^11.1.29",
-    "@nestjs/config": "^4.0.4",
-    "@nestjs/core": "^11.1.29",
-    "@nestjs/platform-express": "^11.1.29",
+    "@nestjs/common": "^12.0.1",
+    "@nestjs/config": "^12.0.0",
+    "@nestjs/core": "^12.0.1",
+    "@nestjs/platform-express": "^12.0.1",
     "@nestjs/terminus": "^11.1.1",
     "@sentry/nestjs": "catalog:",
     "aura-cache": "workspace:*",
@@ -40,9 +40,9 @@
     "svix": "^2.0.0"
   },
   "devDependencies": {
-    "@nestjs/cli": "^11.0.24",
-    "@nestjs/schematics": "^11.1.0",
-    "@nestjs/testing": "^11.1.29",
+    "@nestjs/cli": "^12.0.0",
+    "@nestjs/schematics": "^12.0.0",
+    "@nestjs/testing": "^12.0.1",
     "@types/express": "^5.0.6",
     "@types/jest": "^30.0.0",
     "@types/supertest": "^7.2.1",
