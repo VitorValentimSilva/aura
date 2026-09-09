@@ -1,4 +1,4 @@
 import { z } from "zod";
 
-export const emailSchema = z.string().email();
-export const cuidSchema = z.string().cuid();
+export const emailSchema = z.email();
+export const cuidSchema = z.cuid2();
