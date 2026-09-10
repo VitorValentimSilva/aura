@@ -1,6 +1,6 @@
-import { DEFAULT_PORTS } from "aura-constants";
 import { z } from "zod";
 
+import { DEFAULT_PORTS } from "./constants.js";
 import { createEnv, nodeEnvSchema, optionalUrl } from "./server.js";
 
 const apiEnvSchema = z.object({
@@ -22,7 +22,3 @@ const apiEnvSchema = z.object({
 });
 
 export const apiEnv = createEnv(apiEnvSchema);
-
-export function assertApiEnv(): void {
-  void apiEnv;
-}

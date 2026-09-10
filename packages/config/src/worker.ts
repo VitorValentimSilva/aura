@@ -1,6 +1,6 @@
-import { DEFAULT_PORTS } from "aura-constants";
 import { z } from "zod";
 
+import { DEFAULT_PORTS } from "./constants.js";
 import { createEnv, nodeEnvSchema, optionalUrl } from "./server.js";
 
 const workerEnvSchema = z.object({
@@ -11,7 +11,3 @@ const workerEnvSchema = z.object({
 });
 
 export const workerEnv = createEnv(workerEnvSchema);
-
-export function assertWorkerEnv(): void {
-  void workerEnv;
-}

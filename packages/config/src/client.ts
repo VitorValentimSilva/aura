@@ -1,6 +1,6 @@
-import { DEFAULT_PORTS } from "aura-constants";
 import { z } from "zod";
 
+import { DEFAULT_PORTS } from "./constants.js";
 import { createEnv, optionalString, optionalUrl } from "./server.js";
 
 const clientEnvSchema = z.object({
@@ -11,7 +11,3 @@ const clientEnvSchema = z.object({
 });
 
 export const clientEnv = createEnv(clientEnvSchema);
-
-export function assertClientEnv(): void {
-  void clientEnv;
-}
