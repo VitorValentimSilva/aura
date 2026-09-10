@@ -1,7 +1,5 @@
 import "@app/globals.css";
 
-import { enUS, ptBR } from "@clerk/localizations";
-import { ClerkProvider } from "@clerk/nextjs";
 import { routing } from "@i18n/routing";
 import { ThemeProvider } from "@providers/theme-provider";
 import type { Metadata } from "next";
@@ -12,11 +10,6 @@ import { getMessages } from "next-intl/server";
 import { ReactNode } from "react";
 
 import { ConsoleNoiseFilter } from "@/components/common/console-noise-filter";
-
-const CLERK_LOCALIZATIONS: Record<string, typeof ptBR> = {
-  "pt-BR": ptBR,
-  "en-US": enUS,
-};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,18 +56,16 @@ export default async function Layout({ children, params }: LayoutProps) {
       <body className="flex min-h-full flex-col font-sans">
         <ConsoleNoiseFilter />
 
-        <ClerkProvider localization={CLERK_LOCALIZATIONS[locale] ?? enUS}>
-          <NextIntlClientProvider messages={messages}>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              disableTransitionOnChange
-              enableSystem
-            >
-              {children}
-            </ThemeProvider>
-          </NextIntlClientProvider>
-        </ClerkProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            disableTransitionOnChange
+            enableSystem
+          >
+            {children}
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
