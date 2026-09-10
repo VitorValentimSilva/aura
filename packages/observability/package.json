@@ -23,7 +23,7 @@
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "aura-constants": "workspace:*"
+    "aura-config": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "catalog:",
