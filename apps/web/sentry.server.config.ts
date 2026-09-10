@@ -1,10 +1,7 @@
 import * as Sentry from "@sentry/nextjs";
+import { SERVICE_NAMES } from "aura-config";
 import { clientEnv } from "aura-config/client";
-import { assertWebEnv } from "aura-config/web";
-import { SERVICE_NAMES } from "aura-constants";
 import { buildBaseSentryOptions } from "aura-observability";
-
-assertWebEnv();
 
 Sentry.init(
   buildBaseSentryOptions({ service: SERVICE_NAMES.web, dsn: clientEnv.NEXT_PUBLIC_SENTRY_DSN }),

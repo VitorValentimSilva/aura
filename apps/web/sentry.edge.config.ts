@@ -1,6 +1,6 @@
 import * as Sentry from "@sentry/nextjs";
+import { SERVICE_NAMES } from "aura-config";
 import { clientEnv } from "aura-config/client";
-import { SERVICE_NAMES } from "aura-constants";
 import { buildBaseSentryOptions } from "aura-observability";
 
 Sentry.init(
