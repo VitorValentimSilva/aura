@@ -15,11 +15,8 @@ allowBuilds:
   "@prisma/engines": true
   "@sentry/cli": true
   "@swc/core": true
+  argon2: true
   esbuild: true
   prisma: true
   sharp: false
   unrs-resolver: true
-minimumReleaseAgeExclude:
-  - "@clerk/backend@3.16.9"
-  - "@clerk/nextjs@7.7.9"
-  - svix@2.0.0
