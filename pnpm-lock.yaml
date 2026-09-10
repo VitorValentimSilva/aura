@@ -282,9 +282,6 @@ importers:
       '@nestjs/common':
         specifier: ^11.1.29
         version: 11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1)
-      '@nestjs/config':
-        specifier: ^4.0.4
-        version: 4.0.4(@nestjs/common@11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(rxjs@7.8.2)
       '@nestjs/core':
         specifier: ^11.1.29
         version: 11.1.29(@nestjs/common@11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/platform-express@11.1.29)(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -309,15 +306,9 @@ importers:
       aura-config:
         specifier: workspace:*
         version: link:../../packages/config
-      aura-constants:
-        specifier: workspace:*
-        version: link:../../packages/constants
       aura-database:
         specifier: workspace:*
         version: link:../../packages/database
-      aura-domain:
-        specifier: workspace:*
-        version: link:../../packages/domain
       aura-nest-kit:
         specifier: workspace:*
         version: link:../../packages/nest-kit
@@ -327,9 +318,6 @@ importers:
       aura-validation:
         specifier: workspace:*
         version: link:../../packages/validation
-      dotenv:
-        specifier: ^17.4.2
-        version: 17.4.2
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -400,9 +388,6 @@ importers:
       aura-config:
         specifier: workspace:*
         version: link:../../packages/config
-      aura-constants:
-        specifier: workspace:*
-        version: link:../../packages/constants
       aura-observability:
         specifier: workspace:*
         version: link:../../packages/observability
@@ -473,9 +458,6 @@ importers:
       '@nestjs/common':
         specifier: ^11.1.29
         version: 11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1)
-      '@nestjs/config':
-        specifier: ^4.0.4
-        version: 4.0.4(@nestjs/common@11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(rxjs@7.8.2)
       '@nestjs/core':
         specifier: ^11.1.29
         version: 11.1.29(@nestjs/common@11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/platform-express@11.1.29)(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -488,15 +470,9 @@ importers:
       '@sentry/nestjs':
         specifier: 'catalog:'
         version: 10.70.0(@nestjs/common@11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@11.1.29)(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(supports-color@8.1.1)
-      aura-cache:
-        specifier: workspace:*
-        version: link:../../packages/cache
       aura-config:
         specifier: workspace:*
         version: link:../../packages/config
-      aura-constants:
-        specifier: workspace:*
-        version: link:../../packages/constants
       aura-database:
         specifier: workspace:*
         version: link:../../packages/database
@@ -506,9 +482,6 @@ importers:
       aura-observability:
         specifier: workspace:*
         version: link:../../packages/observability
-      dotenv:
-        specifier: ^17.4.2
-        version: 17.4.2
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -598,24 +571,9 @@ importers:
 
   packages/config:
     dependencies:
-      aura-constants:
-        specifier: workspace:*
-        version: link:../constants
       zod:
         specifier: 'catalog:'
         version: 4.4.3
-    devDependencies:
-      '@types/node':
-        specifier: 'catalog:'
-        version: 26.2.0
-      tsup:
-        specifier: 'catalog:'
-        version: 8.5.1(@swc/core@1.15.47)(jiti@2.7.0)(postcss@8.5.26)(supports-color@8.1.1)(typescript@5.9.3)
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
-
-  packages/constants:
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
@@ -655,18 +613,6 @@ importers:
         specifier: 'catalog:'
         version: 5.9.3
 
-  packages/domain:
-    devDependencies:
-      '@types/node':
-        specifier: 'catalog:'
-        version: 26.2.0
-      tsup:
-        specifier: 'catalog:'
-        version: 8.5.1(@swc/core@1.15.47)(jiti@2.7.0)(postcss@8.5.26)(supports-color@8.1.1)(typescript@5.9.3)
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
-
   packages/nest-kit:
     dependencies:
       '@nestjs/common':
@@ -684,6 +630,9 @@ importers:
       aura-database:
         specifier: workspace:*
         version: link:../database
+      dotenv:
+        specifier: ^17.4.2
+        version: 17.4.2
     devDependencies:
       '@nestjs/core':
         specifier: ^11.1.29
@@ -700,9 +649,9 @@ importers:
 
   packages/observability:
     dependencies:
-      aura-constants:
+      aura-config:
         specifier: workspace:*
-        version: link:../constants
+        version: link:../config
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
@@ -1888,12 +1837,6 @@ packages:
         optional: true
       class-validator:
         optional: true
-
-  '@nestjs/config@4.0.4':
-    resolution: {integrity: sha512-CJPjNitr0bAufSEnRe2N+JbnVmMmDoo6hvKCPzXgZoGwJSmp/dZPk9f/RMbuD/+Q1ZJPjwsRpq0vxna++Knwow==}
-    peerDependencies:
-      '@nestjs/common': ^10.0.0 || ^11.0.0
-      rxjs: ^7.1.0
 
   '@nestjs/core@11.1.29':
     resolution: {integrity: sha512-ANXnZxirMNAY+JuRHCIYIdTfbhX3rizeSbJloub/4EYwpIfCuUoaz9woOofWmywYYc3gsVkLxVZV03gqntI8vA==}
@@ -4250,10 +4193,6 @@ packages:
 
   dotenv@16.6.1:
     resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
-    engines: {node: '>=12'}
-
-  dotenv@17.4.1:
-    resolution: {integrity: sha512-k8DaKGP6r1G30Lx8V4+pCsLzKr8vLmV2paqEj1Y55GdAgJuIqpRp5FfajGF8KtwMxCz9qJc6wUIJnm053d/WCw==}
     engines: {node: '>=12'}
 
   dotenv@17.4.2:
@@ -8439,14 +8378,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nestjs/config@4.0.4(@nestjs/common@11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(rxjs@7.8.2)':
-    dependencies:
-      '@nestjs/common': 11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1)
-      dotenv: 17.4.1
-      dotenv-expand: 12.0.3
-      lodash: 4.18.1
-      rxjs: 7.8.2
-
   '@nestjs/core@11.1.29(@nestjs/common@11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/platform-express@11.1.29)(reflect-metadata@0.2.2)(rxjs@7.8.2)':
     dependencies:
       '@nestjs/common': 11.1.29(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1)
@@ -10656,8 +10587,6 @@ snapshots:
       dotenv: 16.6.1
 
   dotenv@16.6.1: {}
-
-  dotenv@17.4.1: {}
 
   dotenv@17.4.2: {}
 
